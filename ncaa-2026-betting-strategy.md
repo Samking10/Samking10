@@ -163,7 +163,7 @@ rule above exists specifically to keep you out of these.
 |---|---|
 | Baylor vs Auburn (Atlanta) | Neutral-site rematch of Baylor's 38–24 win. Genuine toss-up. Biggest payout, lowest confidence — exactly wrong for a 4-unit bankroll |
 | Louisville vs Ole Miss (Nashville) | Ole Miss post-Kiffin. No reliable read on the new staff |
-| SMU at Florida State | Sept 7 | Monday-night volatility, both programs unsettled |
+| SMU at Florida State | Monday-night volatility (Sept 7), both programs unsettled |
 | Colorado at Georgia Tech | Wide outcome range, no informational edge |
 
 ### Recommended Week 1 card — 2 bets, $20 total exposure

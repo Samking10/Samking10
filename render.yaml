@@ -1,0 +1,48 @@
+# One-click deploy on Render (render.com): New > Blueprint > pick this repo.
+# The persistent disk keeps the SQLite database across deploys; Render snapshots disks daily.
+services:
+  - type: web
+    name: quoteback
+    runtime: docker
+    rootDir: quoteback
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /data/quoteback.db
+      - key: BASE_URL
+        sync: false # e.g. https://app.yourdomain.com
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: EMAIL_TRANSPORT
+        value: postmark
+      - key: FROM_EMAIL
+        sync: false # e.g. followups@mail.yourdomain.com
+      - key: POSTMARK_SERVER_TOKEN
+        sync: false
+      - key: INBOUND_DOMAIN
+        sync: false # e.g. reply.yourdomain.com
+      - key: INBOUND_WEBHOOK_SECRET
+        generateValue: true
+      - key: BILLING_MODE
+        value: manual # switch to "stripe" once Stripe keys are set
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: PLAN_PRICE_CENTS
+        value: "29900"
+      - key: ONBOARDING_FEE_CENTS
+        value: "29900"
+      - key: MAX_ACTIVE_ESTIMATES
+        value: "250"
+      - key: TRIAL_DAYS
+        value: "0"
